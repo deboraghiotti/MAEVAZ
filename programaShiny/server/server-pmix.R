@@ -214,7 +214,7 @@ observeEvent(input$armazenarBD,{
     }else{
       somReSint = funcaoAlgoritmo ( )$arqAvaliacoes$SomRes[1]
     }
-    
+    estacao = loadData("ESTACAO")
     idEstacao <- findID(estacao,input$estacoes)
     idSERIE_SINTETICA <- registrarSSPMIX(input,idEstacao)
     inserirSS(idSERIE_SINTETICA,serieArmazenar)

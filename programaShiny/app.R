@@ -2,9 +2,6 @@
 
 # Carregando os arquivos com as funcoes
 
-source('auxiliar.R')
-
-
 library(data.table)
 library(e1071)
 library(shinyalert)
@@ -13,6 +10,8 @@ library(RMySQL)
 library(shinyjs)
 library(DT)
 
+source('auxiliar.R')
+
 source('avaliacao/coeficienteHurst.R')
 source('avaliacao/correlograma.R')
 source('avaliacao/graficoFAC_Anual.R')
@@ -20,7 +19,6 @@ source('avaliacao/graficoFAC_Mensal.R')
 source('avaliacao/graficoSerieHistorica.R')
 source('avaliacao/graficoSeries.R')
 source('avaliacao/modules.R')
-#source('avaliacao/sumQuadRes.R')
 source('avaliacao/volumeUtil.R')
 
 source('ui/tab-arma.R')
@@ -41,15 +39,11 @@ source('algoritmos/pmix/algoritmo-pmix.R')
 source('algoritmos/pmix/cenarioSintetico.R')
 source('algoritmos/pmix/powell.R')
 source('algoritmos/pmix/entrada.R')
+source('algoritmos/pmix/sumQuadRes.R')
 source('algoritmos/pmix/otimizacao/avaliacao.R')
 source('algoritmos/pmix/otimizacao/inicializaPop.R')
 source('algoritmos/pmix/otimizacao/mecanismos.R')
 source('algoritmos/pmix/otimizacao/tempo.R')
-
-
-#pastas <- c("server","ui")
-#file.sources = list.files("ui",pattern="*.R$", full.names=TRUE, ignore.case=TRUE)
-#sapply(file.sources,source,.GlobalEnv)
 
 # Shiny Server
 # Fonte: https://shiny.rstudio.com/articles/scoping.html
@@ -77,7 +71,7 @@ server <- function (input, output, session) {
   
 }
 
-ui <- navbarPage ("PMIX (p,q,P,Q)",
+ui <- navbarPage ("MAEVAZ",
   TabEstacoes,      
   TabPMIX,
   TabARMA,
